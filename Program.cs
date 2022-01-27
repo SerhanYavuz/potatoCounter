@@ -1,4 +1,8 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Options;
+using PotatoCounter.Interfaces;
+using PotatoCounter.Messaging;
+using PotatoCounter.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +17,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.Configure<RabbitMqConfiguration>(builder.Configuration.GetSection("RabbitMqConfiguration"));
+builder.Services.AddSingleton<IRabbitMqConfiguration>(sp => sp.GetRequiredService<IOptions<RabbitMqConfiguration>>().Value);   
+
+builder.Services.AddSingleton<IPotatoPostSender,PotatoPostSender>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,5 +35,6 @@ app.UseAuthentication();//eğer bu sırayla yazılmazsa loop oluyor
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

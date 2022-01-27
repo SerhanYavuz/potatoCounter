@@ -243,3 +243,4 @@
 /Users/serhanyavuz/Desktop/learn/PotatoCounter/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/serhanyavuz/Desktop/learn/PotatoCounter/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/serhanyavuz/Desktop/learn/PotatoCounter/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/serhanyavuz/Desktop/learn/PotatoCounter/bin/Debug/net6.0/RabbitMQ.Client.dll
