@@ -164,4 +164,13 @@ Resource owner'ın müsadesiyle ve yetkiler uygunsa bir client'a access token ve
 
 	(A) Client, resource ownerdan icazet alır. Burda authorization isteği authorization server'a yapılabilir.
 
-	(B) Client, bir authorization grant yani kendisine erişim bahşedildiğini gösterir bir kimlik alır. Bu kimlikte bilinen dört grant türünün (detayları dokümanın devamında) yanı sıra bizim tanımladığımız grant türleride kullanılabilir. 
+	(B) Client, bir authorization grant yani kendisine erişim bahşedildiğini gösterir bir kimlik alır(kullanıcı adı ve şifre). Bu kimlikte bilinen dört grant türünün (authorization code, implicit, resource owner password credentials, client credentials) yanı sıra bizim tanımladığımız grant türleride kullanılabilir.
+
+	(C) client authorization grant ile authorization server'a gider 
+
+	(D) Authorization server, client'ın yolladığı kodu doğrular ve client'a erişim sırasında kullanması için bir access token verir
+
+	(E) Client Resource server'a (asıl apimiz) istek yaparken access token'ı yollar
+
+	(F) Resources server access token'ı doğrular (burada sanırım identity server'a giderek doğruluyor) ve sonucu döner 
+
